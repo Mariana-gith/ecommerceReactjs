@@ -11,7 +11,7 @@ function NavBar() {
         <div>
            <Navbar bg="dark" variant="dark">
                 <Container>
-                <Navbar.Brand className="logo" href="#home">Musilandia</Navbar.Brand>
+                <Navbar.Brand  href="#home" className="logo">Musilandia</Navbar.Brand>
                 <Nav className="navSty">
                     <Nav.Link href="#home">Home</Nav.Link>
                     <Nav.Link href="#features">Tieneda</Nav.Link>
