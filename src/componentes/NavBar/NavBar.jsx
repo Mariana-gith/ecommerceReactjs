@@ -19,9 +19,7 @@ function NavBar() {
                 </Nav>
                 </Container>
                 <Widget/>
-            </Navbar>        
- 
-
+            </Navbar> 
         </div>
     )
 }
