@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Mariana-gith/ecommerceReactjs/static/css/main.11961a4e.chunk.css",
+    "main.js": "/Mariana-gith/ecommerceReactjs/static/js/main.35cc5232.chunk.js",
+    "main.js.map": "/Mariana-gith/ecommerceReactjs/static/js/main.35cc5232.chunk.js.map",
+    "runtime-main.js": "/Mariana-gith/ecommerceReactjs/static/js/runtime-main.673e304f.js",
+    "runtime-main.js.map": "/Mariana-gith/ecommerceReactjs/static/js/runtime-main.673e304f.js.map",
+    "static/css/2.818011ed.chunk.css": "/Mariana-gith/ecommerceReactjs/static/css/2.818011ed.chunk.css",
+    "static/js/2.f8b8c3d4.chunk.js": "/Mariana-gith/ecommerceReactjs/static/js/2.f8b8c3d4.chunk.js",
+    "static/js/2.f8b8c3d4.chunk.js.map": "/Mariana-gith/ecommerceReactjs/static/js/2.f8b8c3d4.chunk.js.map",
+    "static/js/3.e39d5281.chunk.js": "/Mariana-gith/ecommerceReactjs/static/js/3.e39d5281.chunk.js",
+    "static/js/3.e39d5281.chunk.js.map": "/Mariana-gith/ecommerceReactjs/static/js/3.e39d5281.chunk.js.map",
+    "index.html": "/Mariana-gith/ecommerceReactjs/index.html",
+    "static/css/2.818011ed.chunk.css.map": "/Mariana-gith/ecommerceReactjs/static/css/2.818011ed.chunk.css.map",
+    "static/css/main.11961a4e.chunk.css.map": "/Mariana-gith/ecommerceReactjs/static/css/main.11961a4e.chunk.css.map",
+    "static/js/2.f8b8c3d4.chunk.js.LICENSE.txt": "/Mariana-gith/ecommerceReactjs/static/js/2.f8b8c3d4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.673e304f.js",
+    "static/css/2.818011ed.chunk.css",
+    "static/js/2.f8b8c3d4.chunk.js",
+    "static/css/main.11961a4e.chunk.css",
+    "static/js/main.35cc5232.chunk.js"
+  ]
+}
