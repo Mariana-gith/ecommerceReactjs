@@ -25,8 +25,8 @@ function App() {
           </div>
             <div className= 'container'>
               <div className= 'row'>
-               {/*    <ItemListContainer/> */}
-                  <ItemDetailContainer/>
+               {/* <ItemListContainer/> */}
+               <ItemDetailContainer/>
              </div>
             </div> 
         </div>
