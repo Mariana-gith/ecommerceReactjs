@@ -8,7 +8,7 @@ import Items from "../Items/Items"
 
 
 function ItemListContainer () {
-    const [producto,setProducto] = useState([])
+    const [productos,setProducto] = useState([])
   useEffect(()=>{
     mostrar
     .then(resp =>{
@@ -19,7 +19,7 @@ function ItemListContainer () {
   
   return(
       <>
-      <Items producto = {producto}/>
+      <Items productos = {productos}/>
       </>
   )
 }

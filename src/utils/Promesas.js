@@ -14,3 +14,12 @@ const productos = [
       resolve(productos)      
     }, 3000);
 })
+
+
+const unProducto = {id: 6, nombre :"Ibanez Sr500e", descripcion: "Bajo Eléctrico 4c Ibanez Brown Mahogany Bartolini", price:158400, img:"https://http2.mlstatic.com/D_NQ_NP_816575-MLA45977666637_052021-O.webp"}
+
+export const mostrarUno = new Promise ((resolve)=>{
+  setTimeout(() => {
+    resolve(unProducto)
+  }, 3000);
+})
