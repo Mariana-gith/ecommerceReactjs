@@ -5,3 +5,4 @@ const Bienvenida = ({greeting = 'Bienvenid@'})=> {
 }
 
 export default Bienvenida 
+
