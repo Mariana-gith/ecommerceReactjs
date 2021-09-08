@@ -1,6 +1,13 @@
 import { useState } from "react";
 import './index.scss';
 
+
+
+
+export const onAdd = (count)=> {
+    alert( `Compraste ${count} productos`)     
+  }
+
 const Contador = ({initial, stock, onAdd})=> {
 
     const [count , setCount] = useState (initial)
@@ -24,6 +31,7 @@ const Contador = ({initial, stock, onAdd})=> {
         onAdd(count)
       
     }
+    
 
     return(
         <div>

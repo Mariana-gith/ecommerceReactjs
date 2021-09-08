@@ -1,27 +1,23 @@
-import { mostrarUno } from "../../utils/Promesas"
 
 
+const ItemDetail =({p}) =>{
 
-const ItemDetail =({producto}) =>{
-    console.log(mostrarUno);
+    const {id,img,nombre, descripcion, price}=p
     return(
-        <>
-            
-            <div className="card container">
+        <>            
+            <div className="card container ">
                 <div className="row">
                     <div >
-                        <div className="card-header ">
-                          <label >{producto.nombre}</label>
+                        <div className="card-header "key={id}>
+                          <label >{nombre}</label>
                          </div>
                         <div className="card-body ">
-                         <img src={producto.img} alt=""/>
-                         <div className="">{producto.descripcion}</div>
+                         <img src={img} alt=""/>
+                         <div className="">{descripcion}</div>
                         </div>
                         <div className="card-footer">
-                            {producto.price}
+                           $ {price}
                         </div>
-                                               
-                       
                     </div>
                 </div>
             </div>
