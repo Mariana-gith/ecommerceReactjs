@@ -2,21 +2,21 @@
 
 const ItemDetail =({p}) =>{
 
-    const {id,img,nombre, descripcion, price}=p
+  console.log(p)
     return(
         <>            
             <div className="card container ">
                 <div className="row">
                     <div >
-                        <div className="card-header "key={id}>
-                          <label >{nombre}</label>
+                        <div className="card-header "key={p.id}>
+                          <label >{p.nombre}</label>
                          </div>
                         <div className="card-body ">
-                         <img src={img} alt=""/>
-                         <div className="">{descripcion}</div>
+                         <img src={p.img} alt=""/>
+                         <div className="">{p.descripcion}</div>
                         </div>
                         <div className="card-footer">
-                           $ {price}
+                           $ {p.price}
                         </div>
                     </div>
                 </div>

@@ -9,21 +9,31 @@ import ItemDetail from "./ItemDetail"
 const ItemDetailContainer = () =>{
     const [producto,setProducto] = useState({})
     const [cargando, setCargando]= useState(true)
-    const {products} = useParams()
+    const {id} = useParams()
 
     useEffect (()=>{
-        if (products=== undefined){
-            console.log('producto no encontrado')
-        }else{
-            getProduct
-            .then((res)=> setProducto(res.filter(p=>products === p.id)))
-            setCargando(false)
-           
-        }
-     
-    }, [products])
+
+        if (id=== undefined){
     
-    console.log(producto)
+          console.log('producto no encontrado')
+    
+        }else{
+    
+          getProduct
+    
+          .then((res)=> setProducto(res.filter(p=>parseInt(id) === p.id)))
+    
+          setCargando(false)
+    
+          
+    
+        }
+    
+       
+    
+      }, [id])
+    
+    console.log()
     return (
         <>
              {  
