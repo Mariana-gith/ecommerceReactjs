@@ -12,7 +12,9 @@ function NavBar() {
         <div>
            <Navbar bg="dark" variant="dark">
                 <Container>
-                <Navbar.Brand  href="#home" className="logo">Musilandia</Navbar.Brand>
+                    <Link to='/'>
+                        <Navbar.Brand  href="#home" className="logo">Musilandia</Navbar.Brand>
+                    </Link>
                 <Nav className="navSty">
                     <Link to='/'>
                     <Nav.Link href="#home">Home</Nav.Link>
@@ -24,8 +26,12 @@ function NavBar() {
                     <Nav.Link href="#features">Bajos</Nav.Link>
                     </Link>
                 </Nav>
+                <div >
+                    <Link to ='/cart'>
+                        <Widget/>
+                    </Link>                    
+                </div>
                 </Container>
-                <Widget/>
             </Navbar> 
         </div>
     )

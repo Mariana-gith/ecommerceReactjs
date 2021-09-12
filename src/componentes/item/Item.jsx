@@ -23,7 +23,7 @@ const {id,img,nombre, descripcion, price}=p
                                 <Card.Text>
                                     $ {price}
                                 </Card.Text>
-                               <Link to={`/products/${id}`}>
+                               <Link to= "/detalle">
                                 <Button variant="success">Detalle</Button>
                                </Link>
                             </Card.Body>

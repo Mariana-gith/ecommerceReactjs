@@ -37,7 +37,7 @@ function App() {
               </div>
             </div>
           </Route>
-          <Route exact path ='products/:id' >
+          <Route exact path ='/detalle' >
             <ItemDetailContainer/>  
           </Route>
         </Switch>
