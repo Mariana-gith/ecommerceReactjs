@@ -15,17 +15,19 @@ function ItemListContainer () {
 
   useEffect(()=>{
     if (categoria === undefined){
-      mostrar
+      mostrar()
       .then(resp =>{
         setProducto(resp)
       })
     } else{
-      mostrar
-      .then(resp =>{
+      mostrar()
+      .then(resp =>{        
         setProducto(resp.filter( cat=> categoria === cat.categoria))
       })
     }    
   }, [categoria]) 
+
+
 
   return(
       <>

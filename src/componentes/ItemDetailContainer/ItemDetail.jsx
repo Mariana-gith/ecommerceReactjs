@@ -1,24 +1,25 @@
+import { useCartContext } from "../../context/CartContext"
 import Contador from "../ItemCount/Contador"
 
 
 
+const ItemDetail =({producto}) =>{
 
-const ItemDetail =(props) =>{
+    const{addToCart}=useCartContext()
 
-const {producto} = props 
+    const onAdd = (count)=> {
+        alert( `Compraste ${count} productos`) 
+        console.log(count)        
+        addToCart(producto) 
+    }    
 
-const onAdd = (count)=> {
-    alert( `Compraste ${count} productos`)     
-  }
-
-  console.log(producto)
     return(
         <>            
             <div className="card container ">
                 <div className="row">
                     <div >
                         <div className="card-header ">
-                          <label >{producto.nombre}</label>
+                    <label >{producto.nombre}</label>
                          </div>
                         <div className="card-body ">
                          <img src={producto.img} alt=""/>

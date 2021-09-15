@@ -1,4 +1,4 @@
-import { Modal } from "bootstrap";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import './index.scss';
@@ -7,11 +7,11 @@ import './index.scss';
 
 
 export const onAdd = (count)=> {
-    alert( `Compraste ${count} productos`) 
+    alert( `Compraste ${count} productos`)    
    
-  }
+    }
 
-const Contador = ({initial, stock, onAdd})=> {
+    const Contador = ({initial, stock, onAdd, addItem})=> {
 
     const [count , setCount] = useState (initial)
     const [cambiar, setCambiar] = useState(false)
@@ -35,9 +35,9 @@ const Contador = ({initial, stock, onAdd})=> {
     const handlerOnAdd = ()=> {
         onAdd(count)        
         setCambiar (true)
+       
     }
     
-
     return(
         <div>
             <button onClick={handlerSumar}>+</button>

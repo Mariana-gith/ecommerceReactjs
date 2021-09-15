@@ -15,18 +15,19 @@ const productos = [
   
 
 export function getProduct (id){
+  console.log('log id',id)
   if (id === undefined){
       return productos
   }else{
-    return productos.find(prod => productos=== prod.id)
+    return productos.find(prod => prod.id=== parseInt(id))
   }
 }
 
 
-  export const mostrar = new Promise ((resolve)=>{ 
-    setTimeout(() => {
-      resolve(getProduct())      
-    }, 3000);
+  export const mostrar = (id) => new Promise ((resolve)=>{ 
+    setTimeout((id) => {
+      resolve(getProduct(id))      
+    }, 3000,id);
 })
 
 
