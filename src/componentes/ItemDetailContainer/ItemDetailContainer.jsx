@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useEffect } from "react"
+import Spinner  from "react-bootstrap/Spinner"
 import { useParams } from "react-router"
 import { mostrar} from "../../utils/Promesas"
 import ItemDetail from "./ItemDetail"
@@ -14,21 +15,24 @@ const ItemDetailContainer = () =>{
    
   useEffect (()=>{
     mostrar(id)
-      .then(resp=> {
+    .then(resp=> {
           setProducto(resp)
           setCargando(false)
-          
-        console.log('log producto', resp)
+          console.log('log producto', resp)
        
       })
-  }, [id])
+  }, [id],2000)
   return (
       <>
-          {cargando ? 
+          {cargando &&
+           <div>
+              <Spinner animation="border" role="status" variant="info">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
               <p>Cargando tu pedido...</p> 
-              :
-              < ItemDetail producto={producto}/>
-          }
+            </div>
+          }          
+           {!cargando &&   < ItemDetail producto={producto}/>}
             
         </>
     )

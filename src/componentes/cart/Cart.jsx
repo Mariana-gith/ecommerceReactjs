@@ -1,12 +1,39 @@
 import { useCartContext } from "../../context/CartContext"
+import Table from "react-bootstrap/Table"
+
+
+
 
 
 const Cart = () =>{
-    const {remCArt}= useCartContext()
+  
+    const {cart,remCArt,borrarItem}= useCartContext()
+    
     return(
         <div>
-            <h2>Cart</h2>
-            <button onClick= {remCArt}>Limpiar carrito</button>
+           {cart.map (p=>         
+             <div className="d-flex" >
+                <Table striped bordered hover size="sm">
+                  <thead>
+                    <tr>           
+                      <th>Nombre</th>
+                      <th>Precio</th>
+                      <th>Cantidad</th>
+                      <th></th>  
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{p.producto.nombre}</td>
+                      <td>{p.producto.price}</td>
+                      <td>{p.count}</td>
+                      <td><button onClick= {()=> borrarItem()} >x</button></td>
+                    </tr>
+                  </tbody>
+                </Table>
+             </div>)
+           }
+          <button onClick= {() =>remCArt()}>Limpiar carrito</button>
         </div>
     )
 }

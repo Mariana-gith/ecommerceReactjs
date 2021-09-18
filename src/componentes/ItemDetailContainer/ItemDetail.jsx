@@ -1,5 +1,7 @@
+
 import { useCartContext } from "../../context/CartContext"
 import Contador from "../ItemCount/Contador"
+
 
 
 
@@ -7,10 +9,11 @@ const ItemDetail =({producto}) =>{
 
     const{addToCart}=useCartContext()
 
-    const onAdd = (count)=> {
-        alert( `Compraste ${count} productos`) 
-        console.log(count)        
-        addToCart(producto) 
+    const onAdd = ( count)=> {
+      
+        console.log(`Compraste ${count} productos`)        
+        console.log(producto)        
+        addToCart( producto, count) 
     }    
 
     return(
