@@ -7,7 +7,12 @@ import './index.scss';
 import { Link } from "react-router-dom";
 
 
+
+
 function NavBar() {
+
+   
+
     return(
         <div>
            <Navbar bg="dark" variant="dark">

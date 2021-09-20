@@ -29,7 +29,7 @@ function ItemListContainer () {
         setLoad(false)
     })
       }
-  }, [categoria],2000) 
+  }, [categoria]) 
 
 
 

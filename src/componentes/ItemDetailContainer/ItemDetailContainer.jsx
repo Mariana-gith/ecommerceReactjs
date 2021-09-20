@@ -21,7 +21,7 @@ const ItemDetailContainer = () =>{
           console.log('log producto', resp)
        
       })
-  }, [id],2000)
+  }, [id])
   return (
       <>
           {cargando &&

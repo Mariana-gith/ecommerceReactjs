@@ -10,7 +10,6 @@ const ItemDetail =({producto}) =>{
     const{addToCart}=useCartContext()
 
     const onAdd = ( count)=> {
-      
         console.log(`Compraste ${count} productos`)        
         console.log(producto)        
         addToCart( producto, count) 
