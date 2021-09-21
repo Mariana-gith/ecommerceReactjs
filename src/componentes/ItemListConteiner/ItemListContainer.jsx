@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import  Spinner  from "react-bootstrap/Spinner"
 import { useParams } from "react-router"
-import { mostrar } from "../../utils/Promesas"
+import { getFirestore } from "../../service/getfirebase"
 import Items from "../Items/Items"
 
 
@@ -14,29 +14,41 @@ function ItemListContainer () {
     const [load,setLoad]= useState(true)
 
     const {categoria} = useParams()
+    
+    
+    useEffect(()=>{
+      const db = getFirestore()
+      const repuestaBD= db.collection('items')
+      const guitarraCategoria =repuestaBD.where('categoria','!=','Guitarra').get()
+      const bajoCategoria = repuestaBD.where('categoria','!=','Bajo').get()
+      const todosProductos = repuestaBD.get()
 
-  useEffect(()=>{
-    if (categoria === undefined){
-      mostrar()
-      .then(resp =>{
-        setProducto(resp)
-        setLoad(false)
-      })
-    } else{
-      mostrar()
-      .then(resp =>{        
-        setProducto(resp.filter( cat=> categoria === cat.categoria))
-        setLoad(false)
-    })
-      }
+        bajoCategoria.then(resp =>{
+          if(categoria === 'guitarra'){
+            setProducto(resp.docs.map(prod => ({id : prod.id, ...prod.data()})))
+            setLoad(false) 
+          }
+        })
+        guitarraCategoria.then(respuesta =>{  
+          if(categoria=== 'bajo'){
+            setProducto(respuesta.docs.map(prod => ({id : prod.id, ...prod.data()})))
+          }  
+       })
+        todosProductos.then(r =>{     
+          if(categoria === undefined)     
+          setProducto(r.docs.map(prod => ({id : prod.id, ...prod.data()})))
+          setLoad(false)
+        })  
+    
+  
   }, [categoria]) 
 
-
+console.log(productos)
 
   return(
       <>
       
-      {load&&
+     {load&&
         <div>
           <Spinner animation="border" role="status" variant="info">
             <span className="visually-hidden">Loading...</span>
@@ -47,7 +59,7 @@ function ItemListContainer () {
       
       {!load&&
         <Items productos = {productos}/>
-      }
+  } 
       
       </>
   )

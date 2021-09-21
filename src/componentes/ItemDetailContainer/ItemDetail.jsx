@@ -5,6 +5,7 @@ import Contador from "../ItemCount/Contador"
 
 
 
+
 const ItemDetail =({producto}) =>{
 
     const{addToCart}=useCartContext()

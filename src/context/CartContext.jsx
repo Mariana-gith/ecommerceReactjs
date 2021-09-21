@@ -8,7 +8,7 @@ export const useCartContext = () => useContext(CartContext)
 export const CartContextProvider = ({children}) =>{
 
    const [cart, setCart]= useState([{producto: {}, count:0}]) 
-   const [mensaje, setMensaje]= useState(false)  
+  
 
 
    function addToCart( producto, count){ 

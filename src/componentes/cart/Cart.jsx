@@ -16,14 +16,11 @@ const Cart = () =>{
 
 
   useEffect(() => {      
-    if (cart.length==0){
+    if (cart.length === 0 ){
       setMensaje(false)
     }
     },)
 
-
-
- 
  console.log('esto es mensaje', mensaje)
   
   return(       

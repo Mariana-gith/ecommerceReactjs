@@ -2,9 +2,8 @@ import { useState } from "react"
 import { useEffect } from "react"
 import Spinner  from "react-bootstrap/Spinner"
 import { useParams } from "react-router"
-import { mostrar} from "../../utils/Promesas"
 import ItemDetail from "./ItemDetail"
-
+import { getFirestore } from "../../service/getfirebase"
 
 
 const ItemDetailContainer = () =>{
@@ -12,16 +11,21 @@ const ItemDetailContainer = () =>{
   const [cargando, setCargando]= useState (true)
 
   const {id}= useParams()
-   
+
+  
+  
   useEffect (()=>{
-    mostrar(id)
-    .then(resp=> {
-          setProducto(resp)
+    const db = getFirestore()
+    const productosDB = db.collection('items').doc(id).get()
+    productosDB.then(resp=> {
+          setProducto( {id : resp.id, ... resp.data()})
           setCargando(false)
           console.log('log producto', resp)
        
       })
   }, [id])
+
+  console.log(producto)
   return (
       <>
           {cargando &&
