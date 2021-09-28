@@ -15,6 +15,7 @@ function NavBar() {
 
     return(
         <div>
+            
            <Navbar bg="dark" variant="dark">
                 <Container>
                     <Link to='/'>
@@ -24,10 +25,10 @@ function NavBar() {
                     <Link to='/'>
                     <Nav.Link href="#home">Home</Nav.Link>
                     </Link>
-                    <Link to='/category/guitarra'>
+                    <Link to='/category/Guitarra'>
                     <Nav.Link href="#features">Guitarras</Nav.Link>
                     </Link>
-                    <Link to='/category/bajo'>
+                    <Link to='/category/Bajo'>
                     <Nav.Link href="#features">Bajos</Nav.Link>
                     </Link>
                 </Nav>

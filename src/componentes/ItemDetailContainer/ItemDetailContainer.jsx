@@ -21,10 +21,8 @@ const ItemDetailContainer = () =>{
           setProducto( {id : resp.id, ... resp.data()})
           setCargando(false)
           console.log('log producto', resp)
-       
       })
-  }, [id])
-
+  }, [id], 2000)
   console.log(producto)
   return (
       <>

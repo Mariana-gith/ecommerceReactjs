@@ -16,32 +16,25 @@ function ItemListContainer () {
     const {categoria} = useParams()
     
     
+    
     useEffect(()=>{
       const db = getFirestore()
-      const repuestaBD= db.collection('items')
-      const guitarraCategoria =repuestaBD.where('categoria','!=','Guitarra').get()
-      const bajoCategoria = repuestaBD.where('categoria','!=','Bajo').get()
-      const todosProductos = repuestaBD.get()
 
-        bajoCategoria.then(resp =>{
-          if(categoria === 'guitarra'){
-            setProducto(resp.docs.map(prod => ({id : prod.id, ...prod.data()})))
-            setLoad(false) 
-          }
+      const condicionR = categoria ?
+        db.collection('items').where('categoria', '==', categoria)
+      :
+        db.collection('items')
+        setLoad(false) 
+
+        condicionR.get()
+        .then(resp =>{
+          if(resp.size === 0){
+            console.log('vacio')
+          } 
+          setProducto(resp.docs.map(prod => ({id : prod.id, ...prod.data()})))
+          setLoad(false) 
         })
-        guitarraCategoria.then(respuesta =>{  
-          if(categoria=== 'bajo'){
-            setProducto(respuesta.docs.map(prod => ({id : prod.id, ...prod.data()})))
-          }  
-       })
-        todosProductos.then(r =>{     
-          if(categoria === undefined)     
-          setProducto(r.docs.map(prod => ({id : prod.id, ...prod.data()})))
-          setLoad(false)
-        })  
-    
-  
-  }, [categoria]) 
+  }, [categoria],2000) 
 
 console.log(productos)
 
